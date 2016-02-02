@@ -51,3 +51,15 @@ Main_loop:
  show_score: This procedure used for display score in same position on screen.
  </pre>
 
+##Screenshots
+###Start Menu
+![Menu](http://www.rezve.com/project_file/8086/start_menu.png)
+
+###Game Screen 1
+![Game Screen 1](http://www.rezve.com/project_file/8086/game_1.png)
+
+###Game Screen 2
+![Game Screen 2](http://www.rezve.com/project_file/8086/game_2.png)
+
+###End Menu
+![End Menu](http://www.rezve.com/project_file/8086/end_menu.png)
