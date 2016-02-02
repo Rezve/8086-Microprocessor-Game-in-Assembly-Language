@@ -1,6 +1,9 @@
 # 8086-Microprocessor-Game-in-Assembly-Language
 This is a game developed with assembly language and tested in emu8086 (v4.08) emulator
 
+All you need to copy the code from <code>game.asm</code> file and run it in emu8086.
+
+<h4>Summery</h4>
 It’s a balloon shooting game where player shoots an arrow to hit the balloon and when the balloon gets hit it beeps and a new balloon pops up and you get to shoot another arrow towards it. 
 
 I used few label and conditional jump statement to update logic and display everything.
