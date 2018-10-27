@@ -11,6 +11,7 @@ I used few label and conditional jump statement to update logic and display ever
 <h4>ALGORITHM:</h4>
 
 <pre>
+
 Main_loop:
   This is where logical part of game, handling user inputs and visually rendering happens.
 
