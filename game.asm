@@ -4,7 +4,7 @@
 ;;              Md. Rezve Hasan     13141103056                                ;;
 ;;=============================================================================;;
 
-
+;show main menu
 macro menu 
 local input 
     mov ah,09h
@@ -19,6 +19,8 @@ local input
     call clear_screen                    
     call show_score 
 endm 
+
+;take the input from user and translte it
 macro takeinput 
 local con,upKey,downKey,spaceKey,left,right
 
@@ -68,7 +70,7 @@ con:
 endm 
 ;----------------------------------------------
 
-
+;check if player can move
 macro caldir 
 local con,player_up,player_down
 
@@ -77,7 +79,6 @@ mov ch, 1111b
 mov bx,player_pos 
 mov es:[bx], cx
 
-;بيتاكد لو المفروض اتحرك
 	cmp direction,8d                 
     je player_up					
     cmp direction,2d               
@@ -98,19 +99,20 @@ player_down:
 jmp con
 
 con:
-mov direction, 0		
-			mov cl, 125d              
-            mov ch, 1100b
-            mov bx,player_pos 
-            mov es:[bx], cx	
+	mov direction, 0		
+	mov cl, 125d              
+    mov ch, 1100b
+    mov bx,player_pos 
+    mov es:[bx], cx	
 
 endm 
 ;----------------------------------------------
+;end of Game
 macro over 
 local input
 
-   call clear_screen                   
-   call show_score 
+    call clear_screen                   
+    call show_score 
 
 	mov ah,09h
     mov dx, offset game_over_str
@@ -126,14 +128,15 @@ local input
     mov loon_status, 0d
     mov direction, 0d
 	mov myshoot,0
-    input:
-        mov ah,1
-        int 21h
-        cmp al,13d
-        jne input
+input:
+    mov ah,1
+    int 21h
+    cmp al,13d
+    jne input
     	
 endm 
 
+;for move loon and arrow
 macro render1
 local con,pass,acc,con2,plus,minus,con3
    
@@ -146,11 +149,11 @@ local con,pass,acc,con2,plus,minus,con3
     mov ch, 1101b
     mov bx,loon_pos 
     mov es:[bx], cx        
-	cmp loon_pos, 0d                   ;check missed loon
+	cmp loon_pos, 0d  ;check missed loon
     jg pass
 	
     inc miss                
-    call show_score 
+    call show_score ;update score
     
     mov loon_status, 1d
     mov loon_pos, 3860d 
@@ -158,16 +161,16 @@ pass:
 	cmp arrow_status,1d            
     jne con	
 	 
-        mov cl, ' '
-        mov ch, 1111b
-        mov bx,arrow_pos            
-        mov es:[bx], cx          
-        add arrow_pos,4d
-		cmp myshoot,1
-		je plus
-		cmp myshoot,2
-		je minus
-		jmp con2
+    mov cl, ' '
+    mov ch, 1111b
+    mov bx,arrow_pos            
+    mov es:[bx], cx          
+    add arrow_pos,4d
+	cmp myshoot,1
+	je plus
+	cmp myshoot,2
+	je minus
+jmp con2
 		
 plus: add arrow_pos,160d
 	add arrow_limit,160d
@@ -177,10 +180,10 @@ minus: sub arrow_pos,160d
 jmp con2
 
 con2:		
-        mov cl, 26d
-        mov ch, 1001b
-        mov bx,arrow_pos 
-        mov es:[bx], cx
+    mov cl, 26d
+    mov ch, 1001b
+    mov bx,arrow_pos 
+    mov es:[bx], cx
 	
 	mov dx,arrow_limit         
     cmp arrow_pos, dx
@@ -188,6 +191,7 @@ con2:
 	cmp arrow_pos,3860
 	jge acc	
 jmp con 
+;arrow didn't hit anything
 acc:	
 	mov myshoot,0
     mov arrow_status, 0                   
@@ -211,11 +215,10 @@ arrow_limit dw  22d     ;150d
 loon_pos dw 3860d       ;3990d
 loon_status db 0d
 myshoot db 0         
-direction db 0d  ;8 up    
-				  ; 2 down 
+direction db 0d  ;8 up ,2 down    
+				  
 
 state_buf db '00:0:0:0:0:0:00:00$'          ;score veriable
-;hit_num db 0d
 hits dw 0d
 miss dw 0d  
 myarr db   0d,4d,8d,2d,5d,7d,3d
@@ -242,18 +245,18 @@ dw ' ',0ah,0dh
 dw ' ',0ah,0dh
 dw '                ====================================================',0ah,0dh
 dw '               ||                                                  ||',0ah,0dh                                        
-dw '               ||       *    Balloon Shooting Game      *          ||',0ah,0dh
+dw '               ||         *    Balloon Shooting Game      *        ||',0ah,0dh
 dw '               ||                                                  ||',0ah,0dh
 dw '               ||--------------------------------------------------||',0ah,0dh
 dw '               ||                                                  ||',0ah,0dh
 dw '               ||                                                  ||',0ah,0dh
 dw '               ||                                                  ||',0ah,0dh          
-dw '               ||     Use up and down key to move player           ||',0ah,0dh
-dw '               ||          and space button to shoot               ||',0ah,0dh
+dw '               ||        Use up and down key to move player        ||',0ah,0dh
+dw '               ||            and space button to shoot             ||',0ah,0dh
 dw '               ||          you can change the direction of         ||',0ah,0dh
-dw '               ||            the arrow by left & right             ||',0ah,0dh 
+dw '               ||             the arrow by left & right            ||',0ah,0dh 
 dw '               ||                    (+-45degree)                  ||',0ah,0dh
-dw '               ||             Press Enter to start                 ||',0ah,0dh
+dw '               ||                Press Enter to start              ||',0ah,0dh
 dw '                ====================================================',0ah,0dh
 dw '$',0ah,0dh
 
@@ -269,58 +272,56 @@ mov es,ax
 game_menu:
 	menu 
 main_loop: 
-	takeinput 
-    ;--------------------start
-     
-        mov bx,0
-    myloop2:      
-       mov ax,0
-		myloop:
-              inc ax
-              cmp ax,0ffffh
-              jne myloop 
-              
-        inc bx
-        cmp bx,0ffffh
-        jle myloop2 
+	takeinput ;take input from user
+    mov bx,0
 	
+myloop2:      
+    mov ax,0
+myloop:
+    inc ax
+    cmp ax,0ffffh
+	jne myloop 
+  
+    inc bx
+    cmp bx,0ffffh
+    jle myloop2 
+	
+	;condition for End of Game hits>9 or miss >9
 	cmp hits,9                        
-    jge game_over
-    ;--------------------end        
+    jge game_over   
     cmp miss,9                         
     jge game_over
-		caldir 
-        render1 
+	caldir ;validation for move the player
+    render1 ;for loon
 
-        mov dx,arrow_pos                  
-        cmp dx, loon_pos
-        je hit
+    mov dx,arrow_pos                  
+    cmp dx, loon_pos ;if loon have same position as arrow then increment the point
+    je hit
 jmp main_loop        
 hit:                              
-
-            mov ah,2
-            mov dx, 7d
-            int 21h 
+    mov ah,2
+    mov dx, 7d
+    int 21h 
             
-            inc hits  
-            call show_score 
-			mov loon_pos, 3860d  		
+    inc hits  
+    call show_score ;update score
+	mov loon_pos, 3860d  ;new loon		
 jmp main_loop
 
 game_over:
     over
 jmp game_menu
-
+;end of Game
 exit_game:  
 mov exit,10d
 
 main endp
 
-proc show_score
+proc show_score ;print score on the screen
     lea bx,state_buf
     
     mov dx, hits
-    add dx,48d 
+    add dx,48d ;for print it
     
     mov [bx], 9d
     mov [bx+1], 9d
@@ -334,7 +335,7 @@ proc show_score
     mov [bx+9], dx
     
     mov dx, miss
-    add dx,48d
+    add dx,48d ;for print it
     mov [bx+10], ' '
     mov [bx+11], 'M'
     mov [bx+12], 'i'
@@ -351,7 +352,7 @@ proc show_score
 ret    
 show_score endp 
 
-clear_screen proc near
+clear_screen proc near ;clean screan
         mov ah,0
         mov al,3
         int 10h        
