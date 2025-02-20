@@ -1,4 +1,6 @@
 # 8086-Microprocessor-Game-in-Assembly-Language
+![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FRezve%2F8086-Microprocessor-Game-in-Assembly-Language&countColor=%23263759&style=flat-square)
+
 This is a game developed with assembly language and tested in emu8086 (v4.08) emulator
 
 All you need to copy the code from <code>game.asm</code> file and run it in emu8086.
