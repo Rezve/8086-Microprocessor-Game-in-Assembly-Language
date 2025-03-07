@@ -13,16 +13,19 @@ It’s a balloon shooting game where player shoots an arrow to hit the balloon a
 
 I used few label and conditional jump statement to update logic and display everything.
 
-#### Start Menu
+### 📸 Game Screenshots
+
+**1. Start Menu**
+Get a glimpse of the starting point!  
 ![Menu](assets/game_menu.png)
 
-#### Game Screen
-
-💡 **Tip:** Do you see the tiny angle bracket? That’s our arrow! The purple circle is the bubble. If you press space while it's running, an arrow will appear.
+**2. Game Play** 
+ Do you see the tiny angle bracket? That’s our arrow! The purple circle is the bubble. If you press space while it's running, an arrow will appear.
 
 ![Game Screen](assets/game_play.png)
 
-#### End Menu
+**3. End Menu** 
+The final moment! 
 ![End Menu](assets/game_over_menu.png)
 
 ### 🎮 Game Play in Action!  
