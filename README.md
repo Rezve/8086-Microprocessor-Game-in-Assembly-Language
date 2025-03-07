@@ -20,10 +20,13 @@ I used few label and conditional jump statement to update logic and display ever
 
 💡 **Tip:** Do you see the tiny angle bracket? That’s our arrow! The purple circle is the bubble. If you press space while it's running, an arrow will appear.
 
-![Game Screen 1](assets/game_play.png)
+![Game Screen](assets/game_play.png)
 
 #### End Menu
 ![End Menu](assets/game_over_menu.png)
+
+### Game Play Video!
+![Game Play](assets/game_play.gif)
 
 ### Contribution  
 
