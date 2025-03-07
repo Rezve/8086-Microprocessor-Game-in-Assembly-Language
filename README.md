@@ -15,13 +15,13 @@ I used few label and conditional jump statement to update logic and display ever
 
 ### Screenshots
 #### Start Menu
-![Menu](assets\game_menu.png)
+![Menu](assets/game_menu.png)
 
 #### Game Screen 1
-![Game Screen 1](assets\game_play.png)
+![Game Screen 1](assets/game_play.png)
 
 #### End Menu
-![End Menu](assets\game_over_menu.png)
+![End Menu](assets/game_over_menu.png)
 
 ### Contribution  
 
