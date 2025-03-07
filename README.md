@@ -16,7 +16,10 @@ I used few label and conditional jump statement to update logic and display ever
 #### Start Menu
 ![Menu](assets/game_menu.png)
 
-#### Game Screen 1
+#### Game Screen
+
+💡 **Tip:** Do you see the tiny angle bracket? That’s our arrow! The purple circle is the bubble. If you press space while it's running, an arrow will appear.
+
 ![Game Screen 1](assets/game_play.png)
 
 #### End Menu
