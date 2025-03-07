@@ -8,24 +8,34 @@ This is a game developed with assembly language and tested in emu8086 (v4.08) em
 
 All you need to copy the code from <code>game.asm</code> file and run it in emu8086.
 
-#### Summary
+### Summary
 It’s a balloon shooting game where player shoots an arrow to hit the balloon and when the balloon gets hit it beeps and a new balloon pops up and you get to shoot another arrow towards it. 
 
 I used few label and conditional jump statement to update logic and display everything.
 
-#### Contribution  
+### Screenshots
+#### Start Menu
+![Menu](assets\game_menu.png)
+
+#### Game Screen 1
+![Game Screen 1](assets\game_play.png)
+
+#### End Menu
+![End Menu](assets\game_over_menu.png)
+
+### Contribution  
 
 If you create something cool based on this project or have a similar project, feel free to share it here!  
 Please create a pull request to update this README file and add your GitHub repository link.  
 
-#### Community Creations:  
+### Community Creations:  
 1. < Your cool game repository here >
 
 ------
 
-#### ALGORITHM:
+#### Code explanations:
 
-<pre>
+```
 Main_loop:
   This is where logical part of game, handling user inputs and visually rendering happens.
 
@@ -44,7 +54,7 @@ Main_loop:
   Render_arrow:
     Moves arrow forwards
   
-  Insede_loop2:
+  Inside_loop2:
     Render player on viewport
 
   Handling user input:
@@ -58,25 +68,13 @@ Main_loop:
   
   spaceKey
     If no arrow on screen fire new one
-</pre>
+```
 
-<h4>USED PROCEDURES </h4>
-<pre>
+### Used Procedures
+
+```
  clear_screen: it clear the screen. <br>
  show_score: This procedure used for display score in same position on screen.
- </pre>
- 
-##Screenshots
-###Start Menu
-![Menu](http://www.rezve.com/project_file/8086/start_menu.png)
-
-###Game Screen 1
-![Game Screen 1](http://www.rezve.com/project_file/8086/game_1.png)
-
-###Game Screen 2
-![Game Screen 2](http://www.rezve.com/project_file/8086/game_2.png)
-
-###End Menu
-![End Menu](http://www.rezve.com/project_file/8086/end_menu.png)
+```
 
 ![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FRezve%2F8086-Microprocessor-Game-in-Assembly-Language&countColor=%23263759&style=flat-square)
