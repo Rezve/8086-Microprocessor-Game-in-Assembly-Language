@@ -26,6 +26,7 @@ Please create a pull request to update this README file and add your GitHub repo
 #### ALGORITHM:
 
 <pre>
+
 Main_loop:
   This is where logical part of game, handling user inputs and visually rendering happens.
 
