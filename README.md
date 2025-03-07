@@ -1,15 +1,29 @@
 # 8086-Microprocessor-Game-in-Assembly-Language
 
+⭐ If this repository helped you, consider giving it a star! 😊 ⭐  
+
+---
+
 This is a game developed with assembly language and tested in emu8086 (v4.08) emulator
 
 All you need to copy the code from <code>game.asm</code> file and run it in emu8086.
 
-<h4>Summery</h4>
+#### Summary
 It’s a balloon shooting game where player shoots an arrow to hit the balloon and when the balloon gets hit it beeps and a new balloon pops up and you get to shoot another arrow towards it. 
 
 I used few label and conditional jump statement to update logic and display everything.
 
-<h4>ALGORITHM:</h4>
+#### Contribution  
+
+If you create something cool based on this project or have a similar project, feel free to share it here!  
+Please create a pull request to update this README file and add your GitHub repository link.  
+
+#### Community Creations:  
+1. < Your cool game repository here >
+
+------
+
+#### ALGORITHM:
 
 <pre>
 Main_loop:
@@ -51,7 +65,7 @@ Main_loop:
  clear_screen: it clear the screen. <br>
  show_score: This procedure used for display score in same position on screen.
  </pre>
-
+ 
 ##Screenshots
 ###Start Menu
 ![Menu](http://www.rezve.com/project_file/8086/start_menu.png)
