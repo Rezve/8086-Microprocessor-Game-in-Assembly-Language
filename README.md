@@ -13,7 +13,6 @@ It’s a balloon shooting game where player shoots an arrow to hit the balloon a
 
 I used few label and conditional jump statement to update logic and display everything.
 
-### Screenshots
 #### Start Menu
 ![Menu](assets/game_menu.png)
 
