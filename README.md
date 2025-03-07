@@ -25,8 +25,8 @@ I used few label and conditional jump statement to update logic and display ever
 #### End Menu
 ![End Menu](assets/game_over_menu.png)
 
-### Game Play Video!
-![Game Play](assets/game_play.gif)
+### 🎮 Game Play in Action!  
+Check out the gameplay in our [Game Play Video](./GamePlay.md)!
 
 ### Contribution  
 
