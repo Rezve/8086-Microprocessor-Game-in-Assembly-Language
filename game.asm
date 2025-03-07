@@ -377,7 +377,7 @@ main endp
 ;;                                                                    ;;
 ;;____________________________________________________________________;;
 
-proc show_score
+show_score proc
     lea bx,state_buf
     
     mov dx, hits
