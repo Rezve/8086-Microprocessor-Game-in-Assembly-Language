@@ -37,7 +37,7 @@ If you create something cool based on this project or have a similar project, fe
 Please create a pull request to update this README file and add your GitHub repository link.  
 
 ### Community Creations:  
-1. < Your cool game repository here >
+1. [BTL-KTMT-PTIT – Balloon Shooting Game(updated for better gameplay)](https://github.com/ThaiNT960/BTL-KTMT-PTIT)
 
 ------
 
